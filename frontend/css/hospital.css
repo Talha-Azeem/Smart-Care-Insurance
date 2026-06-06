@@ -1,6 +1,6 @@
 body{
     height:100vh;
-    background-image: url('hero-img.webp');
+    background-image: url('../images/hero-img.webp');
 }
 
 .claim-form{
