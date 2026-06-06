@@ -1,0 +1,86 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    background-image: url('hero-img.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.contact-box{
+    width:850px;
+    background:white;
+    display:flex;
+    gap:30px;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* Left Side */
+.contact-info{
+    flex:1;
+}
+
+.contact-info h1{
+    margin-bottom:10px;
+    color:#1f2937;
+}
+
+.contact-info p{
+    color:gray;
+    margin-bottom:20px;
+}
+
+.info p{
+    margin-bottom:10px;
+    color:#333;
+}
+
+/* Right Side Form */
+.contact-form{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    outline:none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color:#2563eb;
+}
+
+.contact-form button{
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.contact-form button:hover{
+    background:#1d4ed8;
+}

@@ -161,26 +161,5 @@ button:hover{
     }
 }
 
-.sidebar{
-    width:250px;
-    min-height:100vh;
-    background:#0F766E;
-    color:white;
-    padding:20px;
-}
 
-.sidebar h2{
-    margin-bottom:40px;
-}
 
-.sidebar ul li{
-    padding:15px;
-    margin-bottom:10px;
-    border-radius:10px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.sidebar ul li:hover{
-    background:#14B8A6;
-}

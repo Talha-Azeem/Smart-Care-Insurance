@@ -1,0 +1,48 @@
+body{
+    height:100vh;
+    background-image: url('hero-img.webp');
+}
+
+.claim-form{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    margin-top:30px;
+}
+
+.claim-form h2{
+    margin-bottom:20px;
+}
+
+.input-group{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:15px;
+}
+
+.input-group label{
+    margin-bottom:6px;
+    font-weight:600;
+}
+
+.input-group input{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.claim-form button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#0F766E;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.claim-form button:hover{
+    background:#1d4ed8;
+}
