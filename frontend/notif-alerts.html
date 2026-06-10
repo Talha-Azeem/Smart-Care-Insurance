@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - Health Secure</title>
+    <link rel="stylesheet" href="css/notif-alert.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            <h2>Health Secure</h2>
+        </div>
+        <ul>
+            <li><a href="policyholder-dashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+            <li><a href="submit-claim.html"><i class="fa-solid fa-file-medical"></i> My Claims</a></li>
+            <li><a href="claimtracking.html"><i class="fa-solid fa-magnifying-glass"></i> Track Claim</a></li>
+            <li class="active"><a href="#"><i class="fa-solid fa-bell"></i> Notifications</a></li>
+            <li><a href="../index.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <!-- Topbar -->
+        <div class="topbar">
+            <h3>Notifications</h3>
+            <div class="topbar-right">
+                <button class="mark-all-btn" onclick="markAllRead()">
+                    <i class="fa-solid fa-check-double"></i> Mark All as Read
+                </button>
+                <img src="../images/m-img.svg" alt="avatar">
+            </div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="tabs">
+            <button class="tab active" onclick="filterTab(this, 'all')">All</button>
+            <button class="tab" onclick="filterTab(this, 'unread')">Unread</button>
+            <button class="tab" onclick="filterTab(this, 'approved')">Approved</button>
+            <button class="tab" onclick="filterTab(this, 'pending')">Pending</button>
+            <button class="tab" onclick="filterTab(this, 'rejected')">Rejected</button>
+        </div>
+
+        <!-- Notifications List -->
+        <div class="notifications-list" id="notificationsList">
+
+            <!-- Approved -->
+            <div class="notification-card unread approved" data-type="approved">
+                <div class="notif-icon approved">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <div class="notif-content">
+                    <h4>Claim Approved — CLM-1004</h4>
+                    <p>Your insurance claim for <strong>PKR 15,000</strong> submitted to <strong>South City Hospital</strong> has been <span class="badge approved">Approved</span>.</p>
+                    <span class="time"><i class="fa-regular fa-clock"></i> Today, 10:30 AM</span>
+                </div>
+                <div class="notif-actions">
+                    <button class="btn-read" onclick="markRead(this)"><i class="fa-solid fa-check"></i></button>
+                    <button class="btn-delete" onclick="deleteNotif(this)"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+
+            <!-- Pending -->
+            <div class="notification-card unread pending" data-type="pending">
+                <div class="notif-icon pending">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+                <div class="notif-content">
+                    <h4>Claim Under Review — CLM-1003</h4>
+                    <p>Your claim for <strong>PKR 42,500</strong> submitted to <strong>Liaquat Hospital</strong> is currently <span class="badge pending">Pending</span> review by an officer.</p>
+                    <span class="time"><i class="fa-regular fa-clock"></i> Today, 09:15 AM</span>
+                </div>
+                <div class="notif-actions">
+                    <button class="btn-read" onclick="markRead(this)"><i class="fa-solid fa-check"></i></button>
+                    <button class="btn-delete" onclick="deleteNotif(this)"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+
+            <!-- Rejected -->
+            <div class="notification-card unread rejected" data-type="rejected">
+                <div class="notif-icon rejected">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </div>
+                <div class="notif-content">
+                    <h4>Claim Rejected — CLM-1005</h4>
+                    <p>Unfortunately your claim for <strong>PKR 95,000</strong> submitted to <strong>Ziauddin Hospital</strong> has been <span class="badge rejected">Rejected</span> due to high fraud risk score.</p>
+                    <span class="time"><i class="fa-regular fa-clock"></i> Yesterday, 04:45 PM</span>
+                </div>
+                <div class="notif-actions">
+                    <button class="btn-read" onclick="markRead(this)"><i class="fa-solid fa-check"></i></button>
+                    <button class="btn-delete" onclick="deleteNotif(this)"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+
+            <!-- Approved -->
+            <div class="notification-card approved" data-type="approved">
+                <div class="notif-icon approved">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <div class="notif-content">
+                    <h4>Claim Approved — CLM-1001</h4>
+                    <p>Your insurance claim for <strong>PKR 25,000</strong> submitted to <strong>City Hospital</strong> has been <span class="badge approved">Approved</span>.</p>
+                    <span class="time"><i class="fa-regular fa-clock"></i> 2 days ago</span>
+                </div>
+                <div class="notif-actions">
+                    <button class="btn-read" onclick="markRead(this)"><i class="fa-solid fa-check"></i></button>
+                    <button class="btn-delete" onclick="deleteNotif(this)"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+
+            <!-- Pending -->
+            <div class="notification-card pending" data-type="pending">
+                <div class="notif-icon pending">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+                <div class="notif-content">
+                    <h4>Claim Submitted — CLM-1002</h4>
+                    <p>Your claim for <strong>PKR 80,000</strong> at <strong>Aga Khan Hospital</strong> has been submitted and is <span class="badge pending">Pending</span> assignment to an officer.</p>
+                    <span class="time"><i class="fa-regular fa-clock"></i> 3 days ago</span>
+                </div>
+                <div class="notif-actions">
+                    <button class="btn-read" onclick="markRead(this)"><i class="fa-solid fa-check"></i></button>
+                    <button class="btn-delete" onclick="deleteNotif(this)"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState" style="display:none;">
+            <i class="fa-solid fa-bell-slash"></i>
+            <p>No notifications found</p>
+        </div>
+
+    </div>
+
+
+    
+
+</body>
+</html>

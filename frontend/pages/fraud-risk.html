@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Alerts - Health Secure</title>
+    <link rel="stylesheet" href="../css/fraud-alerts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            <h2>Health Secure</h2>
+        </div>
+        <ul>
+            <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+            <li><a href="officer-claims-review.html"><i class="fa-solid fa-file-medical"></i> Claims Review</a></li>
+            <li class="active"><a href="#"><i class="fa-solid fa-triangle-exclamation"></i> Fraud Alerts</a></li>
+            <li><a href="#"><i class="fa-solid fa-chart-line"></i> Reports</a></li>
+            <li><a href="#"><i class="fa-solid fa-bell"></i> Notifications</a></li>
+            <li><a href="../index.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <!-- Topbar -->
+        <div class="topbar">
+            <h3>Fraud Alerts & Risk Scoring</h3>
+            <div class="topbar-icons">
+                <i class="fa-solid fa-bell"></i>
+                <img src="../images/m-img.svg" alt="avatar">
+            </div>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="summary-cards">
+            <div class="summary-card red">
+                <div class="summary-icon">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+                <div class="summary-info">
+                    <p class="summary-label">High Risk Claims</p>
+                    <h2>08</h2>
+                </div>
+            </div>
+            <div class="summary-card orange">
+                <div class="summary-icon">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                </div>
+                <div class="summary-info">
+                    <p class="summary-label">Medium Risk Claims</p>
+                    <h2>14</h2>
+                </div>
+            </div>
+            <div class="summary-card green">
+                <div class="summary-icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <div class="summary-info">
+                    <p class="summary-label">Low Risk Claims</p>
+                    <h2>31</h2>
+                </div>
+            </div>
+            <div class="summary-card blue">
+                <div class="summary-icon">
+                    <i class="fa-solid fa-flag"></i>
+                </div>
+                <div class="summary-info">
+                    <p class="summary-label">Flagged for Review</p>
+                    <h2>05</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <input type="text" placeholder="Search by Claim ID or Patient Name">
+            <select>
+                <option value="">All Risk Levels</option>
+                <option value="high">High Risk</option>
+                <option value="medium">Medium Risk</option>
+                <option value="low">Low Risk</option>
+            </select>
+            <select>
+                <option value="">All Hospitals</option>
+                <option>City Hospital</option>
+                <option>Aga Khan Hospital</option>
+                <option>Liaquat Hospital</option>
+                <option>Ziauddin Hospital</option>
+            </select>
+        </div>
+
+        <!-- Fraud Alerts Table -->
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Claim ID</th>
+                        <th>Patient Name</th>
+                        <th>Hospital</th>
+                        <th>Claim Amount</th>
+                        <th>Submission Date</th>
+                        <th>Risk Score</th>
+                        <th>Risk Level</th>
+                        <th>Reason</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <!-- High Risk -->
+                    <tr>
+                        <td>CLM-1002</td>
+                        <td>Sara Khan</td>
+                        <td>Aga Khan Hospital</td>
+                        <td>PKR 80,000</td>
+                        <td>03 Jun 2026</td>
+                        <td>
+                            <div class="score-bar">
+                                <div class="score-fill high" style="width: 88%"></div>
+                            </div>
+                            <span class="score-text">88%</span>
+                        </td>
+                        <td><span class="risk high">High</span></td>
+                        <td>Duplicate claim detected</td>
+                        <td>
+                            <button class="btn-flag flagged">
+                                <i class="fa-solid fa-flag"></i> Flagged
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- High Risk -->
+                    <tr>
+                        <td>CLM-1005</td>
+                        <td>Bilal Ahmed</td>
+                        <td>Ziauddin Hospital</td>
+                        <td>PKR 95,000</td>
+                        <td>08 Jun 2026</td>
+                        <td>
+                            <div class="score-bar">
+                                <div class="score-fill high" style="width: 92%"></div>
+                            </div>
+                            <span class="score-text">92%</span>
+                        </td>
+                        <td><span class="risk high">High</span></td>
+                        <td>Abnormal claim amount</td>
+                        <td>
+                            <button class="btn-flag flagged">
+                                <i class="fa-solid fa-flag"></i> Flagged
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Medium Risk -->
+                    <tr>
+                        <td>CLM-1003</td>
+                        <td>Usman Tariq</td>
+                        <td>Liaquat Hospital</td>
+                        <td>PKR 42,500</td>
+                        <td>05 Jun 2026</td>
+                        <td>
+                            <div class="score-bar">
+                                <div class="score-fill medium" style="width: 55%"></div>
+                            </div>
+                            <span class="score-text">55%</span>
+                        </td>
+                        <td><span class="risk medium">Medium</span></td>
+                        <td>Multiple claims in short period</td>
+                        <td>
+                            <button class="btn-flag">
+                                <i class="fa-solid fa-flag"></i> Flag
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Medium Risk -->
+                    <tr>
+                        <td>CLM-1007</td>
+                        <td>Hina Malik</td>
+                        <td>South City Hospital</td>
+                        <td>PKR 33,000</td>
+                        <td>07 Jun 2026</td>
+                        <td>
+                            <div class="score-bar">
+                                <div class="score-fill medium" style="width: 48%"></div>
+                            </div>
+                            <span class="score-text">48%</span>
+                        </td>
+                        <td><span class="risk medium">Medium</span></td>
+                        <td>Unverified hospital records</td>
+                        <td>
+                            <button class="btn-flag">
+                                <i class="fa-solid fa-flag"></i> Flag
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Low Risk -->
+                    <tr>
+                        <td>CLM-1001</td>
+                        <td>Ali Hassan</td>
+                        <td>City Hospital</td>
+                        <td>PKR 25,000</td>
+                        <td>01 Jun 2026</td>
+                        <td>
+                            <div class="score-bar">
+                                <div class="score-fill low" style="width: 18%"></div>
+                            </div>
+                            <span class="score-text">18%</span>
+                        </td>
+                        <td><span class="risk low">Low</span></td>
+                        <td>All documents verified</td>
+                        <td>
+                            <button class="btn-flag">
+                                <i class="fa-solid fa-flag"></i> Flag
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Low Risk -->
+                    <tr>
+                        <td>CLM-1004</td>
+                        <td>Fatima Noor</td>
+                        <td>South City Hospital</td>
+                        <td>PKR 15,000</td>
+                        <td>07 Jun 2026</td>
+                        <td>
+                            <div class="score-bar">
+                                <div class="score-fill low" style="width: 12%"></div>
+                            </div>
+                            <span class="score-text">12%</span>
+                        </td>
+                        <td><span class="risk low">Low</span></td>
+                        <td>Policy coverage confirmed</td>
+                        <td>
+                            <button class="btn-flag">
+                                <i class="fa-solid fa-flag"></i> Flag
+                            </button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html>
