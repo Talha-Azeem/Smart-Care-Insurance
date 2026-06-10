@@ -1,0 +1,101 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policyholder Dashboard</title>
+    <link rel="stylesheet" href="../css/policy-holder.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            <h2>Health Secure</h2>
+        </div>
+        <ul>
+            <li class="active"><i class="fa-solid fa-house"></i> Dashboard</li>
+            <li><i class="fa-solid fa-file-medical"></i> My Claims</li>
+            <li><i class="fa-solid fa-shield-halved"></i> My Policy</li>
+            <li><i class="fa-solid fa-bell"></i> Notifications</li>
+            <li><i class="fa-solid fa-right-from-bracket"></i> Logout</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <!-- Top Bar -->
+        <div class="topbar">
+            <h3>Welcome, Ali Hassan</h3>
+            <div class="topbar-icons">
+                <i class="fa-solid fa-bell"></i>
+                <img src="../images/m-img.svg" alt="avatar">
+            </div>
+        </div>
+
+        <!-- Profile Card -->
+        <div class="profile-card">
+            <div class="profile-avatar">
+                <i class="fa-solid fa-user-circle"></i>
+            </div>
+            <div class="profile-info">
+                <h2>Ali Hassan</h2>
+                <p><i class="fa-solid fa-id-card"></i> CNIC: 42201-1234567-1</p>
+                <p><i class="fa-solid fa-envelope"></i> Email: ali.hassan@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> Phone: +92 300 1234567</p>
+            </div>
+            <div class="profile-badge">
+                <span class="badge active-badge">Active Member</span>
+            </div>
+        </div>
+
+        <!-- Policy Details -->
+        <div class="section-title">Policy Details</div>
+        <div class="policy-cards">
+            <div class="policy-card">
+                <i class="fa-solid fa-file-shield"></i>
+                <div>
+                    <p class="label">Policy Number</p>
+                    <p class="value">POL-2024-56789</p>
+                </div>
+            </div>
+            <div class="policy-card">
+                <i class="fa-solid fa-calendar-check"></i>
+                <div>
+                    <p class="label">Start Date</p>
+                    <p class="value">01 Jan 2024</p>
+                </div>
+            </div>
+            <div class="policy-card">
+                <i class="fa-solid fa-calendar-xmark"></i>
+                <div>
+                    <p class="label">Expiry Date</p>
+                    <p class="value">31 Dec 2026</p>
+                </div>
+            </div>
+            <div class="policy-card">
+                <i class="fa-solid fa-coins"></i>
+                <div>
+                    <p class="label">Coverage Amount</p>
+                    <p class="value">PKR 5,00,000</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="section-title">Quick Actions</div>
+        <div class="actions">
+            <a href="submit-claim.html" class="action-btn">
+                <i class="fa-solid fa-plus"></i> Submit New Claim
+            </a>
+            <a href="claimtracking.html" class="action-btn outline">
+                <i class="fa-solid fa-magnifying-glass"></i> Track My Claim
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>
