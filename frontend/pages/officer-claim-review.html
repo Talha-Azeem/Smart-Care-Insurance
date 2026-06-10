@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Officer Claims Review</title>
+    <link rel="stylesheet" href="../css/off-claim-reve.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            <h2>Health Secure</h2>
+        </div>
+        <ul>
+            <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+            <li class="active"><a href="#"><i class="fa-solid fa-file-medical"></i> Claims Review</a></li>
+            <li><a href="#"><i class="fa-solid fa-triangle-exclamation"></i> Fraud Alerts</a></li>
+            <li><a href="#"><i class="fa-solid fa-chart-line"></i> Reports</a></li>
+            <li><a href="#"><i class="fa-solid fa-bell"></i> Notifications</a></li>
+            <li><a href="../index.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <!-- Topbar -->
+        <div class="topbar">
+            <h3>Claims Review</h3>
+            <div class="topbar-icons">
+                <i class="fa-solid fa-bell"></i>
+                <img src="../images/m-img.svg" alt="avatar">
+            </div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <input type="text" placeholder="Search by Claim ID or Patient Name">
+            <select>
+                <option value="">All Status</option>
+                <option value="pending">Pending</option>
+                <option value="approved">Approved</option>
+                <option value="rejected">Rejected</option>
+            </select>
+            <select>
+                <option value="">All Risk Levels</option>
+                <option value="low">Low Risk</option>
+                <option value="medium">Medium Risk</option>
+                <option value="high">High Risk</option>
+            </select>
+        </div>
+
+        <!-- Claims Table -->
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Claim ID</th>
+                        <th>Patient Name</th>
+                        <th>Hospital</th>
+                        <th>Amount (PKR)</th>
+                        <th>Date</th>
+                        <th>Fraud Risk</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <!-- Row 1 -->
+                    <tr>
+                        <td>CLM-1001</td>
+                        <td>Ali Hassan</td>
+                        <td>City Hospital</td>
+                        <td>25,000</td>
+                        <td>01 Jun 2026</td>
+                        <td><span class="risk low">Low</span></td>
+                        <td><span class="status pending">Pending</span></td>
+                        <td class="action-btns">
+                            <button class="btn-approve" onclick="updateStatus(this, 'Approved')">
+                                <i class="fa-solid fa-check"></i> Approve
+                            </button>
+                            <button class="btn-reject" onclick="updateStatus(this, 'Rejected')">
+                                <i class="fa-solid fa-xmark"></i> Reject
+                            </button>
+                            <button class="btn-info" onclick="requestInfo(this)">
+                                <i class="fa-solid fa-circle-info"></i> Info
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Row 2 -->
+                    <tr>
+                        <td>CLM-1002</td>
+                        <td>Sara Khan</td>
+                        <td>Aga Khan Hospital</td>
+                        <td>80,000</td>
+                        <td>03 Jun 2026</td>
+                        <td><span class="risk high">High</span></td>
+                        <td><span class="status pending">Pending</span></td>
+                        <td class="action-btns">
+                            <button class="btn-approve" onclick="updateStatus(this, 'Approved')">
+                                <i class="fa-solid fa-check"></i> Approve
+                            </button>
+                            <button class="btn-reject" onclick="updateStatus(this, 'Rejected')">
+                                <i class="fa-solid fa-xmark"></i> Reject
+                            </button>
+                            <button class="btn-info" onclick="requestInfo(this)">
+                                <i class="fa-solid fa-circle-info"></i> Info
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Row 3 -->
+                    <tr>
+                        <td>CLM-1003</td>
+                        <td>Usman Tariq</td>
+                        <td>Liaquat Hospital</td>
+                        <td>42,500</td>
+                        <td>05 Jun 2026</td>
+                        <td><span class="risk medium">Medium</span></td>
+                        <td><span class="status pending">Pending</span></td>
+                        <td class="action-btns">
+                            <button class="btn-approve" onclick="updateStatus(this, 'Approved')">
+                                <i class="fa-solid fa-check"></i> Approve
+                            </button>
+                            <button class="btn-reject" onclick="updateStatus(this, 'Rejected')">
+                                <i class="fa-solid fa-xmark"></i> Reject
+                            </button>
+                            <button class="btn-info" onclick="requestInfo(this)">
+                                <i class="fa-solid fa-circle-info"></i> Info
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Row 4 -->
+                    <tr>
+                        <td>CLM-1004</td>
+                        <td>Fatima Noor</td>
+                        <td>South City Hospital</td>
+                        <td>15,000</td>
+                        <td>07 Jun 2026</td>
+                        <td><span class="risk low">Low</span></td>
+                        <td><span class="status approved">Approved</span></td>
+                        <td class="action-btns">
+                            <button class="btn-approve" disabled>
+                                <i class="fa-solid fa-check"></i> Approve
+                            </button>
+                            <button class="btn-reject" disabled>
+                                <i class="fa-solid fa-xmark"></i> Reject
+                            </button>
+                            <button class="btn-info" onclick="requestInfo(this)">
+                                <i class="fa-solid fa-circle-info"></i> Info
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Row 5 -->
+                    <tr>
+                        <td>CLM-1005</td>
+                        <td>Bilal Ahmed</td>
+                        <td>Ziauddin Hospital</td>
+                        <td>95,000</td>
+                        <td>08 Jun 2026</td>
+                        <td><span class="risk high">High</span></td>
+                        <td><span class="status rejected">Rejected</span></td>
+                        <td class="action-btns">
+                            <button class="btn-approve" disabled>
+                                <i class="fa-solid fa-check"></i> Approve
+                            </button>
+                            <button class="btn-reject" disabled>
+                                <i class="fa-solid fa-xmark"></i> Reject
+                            </button>
+                            <button class="btn-info" onclick="requestInfo(this)">
+                                <i class="fa-solid fa-circle-info"></i> Info
+                            </button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Info Request Modal -->
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal">
+                <h3><i class="fa-solid fa-circle-info"></i> Request Additional Information</h3>
+                <p>Please specify what additional documents or information are required from the hospital:</p>
+                <textarea rows="4" placeholder="e.g. Please upload original prescription and lab reports..."></textarea>
+                <div class="modal-btns">
+                    <button class="btn-send" onclick="closeModal()">Send Request</button>
+                    <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function updateStatus(btn, newStatus) {
+            const row = btn.closest('tr');
+            const statusCell = row.querySelector('.status');
+
+            statusCell.textContent = newStatus;
+            statusCell.className = 'status ' + newStatus.toLowerCase();
+
+            // Disable approve and reject buttons after decision
+            row.querySelectorAll('.btn-approve, .btn-reject').forEach(b => b.disabled = true);
+        }
+
+        function requestInfo(btn) {
+            document.getElementById('modalOverlay').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
