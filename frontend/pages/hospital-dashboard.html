@@ -6,42 +6,43 @@
     <title>Hospital Dashboard</title>
     <link rel="stylesheet" href="../css/hospital.css">
 </head>
+
 <body>
 
 <div class="claim-form">
 
     <h2>Submit New Claim</h2>
 
-    <form action="#" method="post">
+    <form action="#" method="post" enctype="multipart/form-data">
 
         <div class="input-group">
             <label>Patient Name</label>
-            <input type="text" placeholder="Enter Patient Name">
+            <input type="text" name="patientName" placeholder="Enter Patient Name">
         </div>
 
         <div class="input-group">
             <label>CNIC</label>
-            <input type="text" placeholder="Enter CNIC">
+            <input type="text" name="cnic" placeholder="Enter CNIC">
         </div>
 
         <div class="input-group">
             <label>Policy Number</label>
-            <input type="text" placeholder="Enter Policy Number">
+            <input type="text" name="policyNumber" placeholder="Enter Policy Number">
         </div>
 
         <div class="input-group">
             <label>Treatment</label>
-            <input type="text" placeholder="Enter Treatment Details">
+            <input type="text" name="treatment" placeholder="Enter Treatment Details">
         </div>
 
         <div class="input-group">
             <label>Claim Amount</label>
-            <input type="number" placeholder="Enter Amount">
+            <input type="number" name="claimAmount" placeholder="Enter Amount">
         </div>
 
         <div class="input-group">
             <label>Upload Medical Report</label>
-            <input type="file">
+            <input type="file" name="medicalReport">
         </div>
 
         <button type="submit">Submit Claim</button>
@@ -50,5 +51,25 @@
 
 </div>
 
+<div class="claims-list">
+    <h2>Submitted Claims</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Patient</th>
+                <th>Treatment</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody id="hospital-claims">
+            <!-- Claims will be loaded here -->
+        </tbody>
+    </table>
+</div>
+
+<script src="../js/hospital.js"></script>
 </body>
 </html>
