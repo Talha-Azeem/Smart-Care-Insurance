@@ -1,48 +1,90 @@
-body{
-    height:100vh;
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     background-image: url('../images/hero-img.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    font-family: Arial, sans-serif;
 }
 
-.claim-form{
-    background:white;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
-    margin-top:30px;
+.claim-form {
+    width: 100%;
+    max-width: 420px;
+
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+    box-sizing: border-box; 
+    
 }
 
-.claim-form h2{
-    margin-bottom:20px;
+.claim-form h2 {
+    margin-bottom: 18px;
+    text-align: center;
+    font-size: 22px;
 }
 
-.input-group{
-    display:flex;
-    flex-direction:column;
-    margin-bottom:15px;
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
 }
 
-.input-group label{
-    margin-bottom:6px;
-    font-weight:600;
+.input-group label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
 }
 
-.input-group input{
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:8px;
+.input-group input {
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.claim-form button{
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:8px;
-    background:#0F766E;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
+.input-group input:focus {
+    border-color: #0F766E;
 }
 
-.claim-form button:hover{
-    background:#1d4ed8;
+.claim-form button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+
+    background: #0F766E;
+    color: white;
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.claim-form button:hover {
+    background: #1d4ed8;
+}
+
+/* Mobile improvement */
+@media (max-width: 480px) {
+    .claim-form {
+        padding: 20px;
+    }
+
+    .claim-form h2 {
+        font-size: 20px;
+    }
 }
